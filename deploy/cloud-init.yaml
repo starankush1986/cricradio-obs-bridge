@@ -1,0 +1,12 @@
+#cloud-config
+package_update: true
+packages:
+  - nginx
+  - git
+runcmd:
+  - curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+  - apt-get install -y nodejs
+  - npm install -g pm2
+  - rm -rf /var/www/cricradio-obs-bridge
+  - git clone https://github.com/starankush1986/cricradio-obs-bridge.git /var/www/cricradio-obs-bridge
+  - bash /var/www/cricradio-obs-bridge/deploy/setup-server.sh
