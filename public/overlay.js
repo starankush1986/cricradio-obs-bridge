@@ -93,6 +93,14 @@ function formatBatsmenSingleLine(names, strikerName) {
     .join("");
 }
 
+function shouldShowRequiredText(text) {
+  const value = cleanText(text);
+  if (!value) {
+    return false;
+  }
+  return /required|need \d+|target/i.test(value);
+}
+
 function cleanText(value) {
   if (value === undefined || value === null) {
     return "";
@@ -294,8 +302,7 @@ function renderBoard(board) {
   matchTitleEl.classList.add("hidden-line");
 
   const requiredText = state.required || "";
-  const hasRequired =
-    requiredText && requiredText.toLowerCase().includes("required");
+  const hasRequired = shouldShowRequiredText(requiredText);
   requiredEl.textContent = hasRequired ? requiredText : "";
   requiredEl.classList.toggle("hidden-line", !hasRequired);
 
