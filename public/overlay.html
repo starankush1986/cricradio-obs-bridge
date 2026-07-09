@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280, height=720, initial-scale=1" />
+    <title>CricRadio OBS Overlay</title>
+    <link rel="stylesheet" href="/overlay.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <section class="list-section">
+          <h2>Live Matches</h2>
+          <div id="live-list" class="match-list"></div>
+        </section>
+
+        <section class="list-section">
+          <h2>Upcoming</h2>
+          <div id="upcoming-list" class="match-list"></div>
+        </section>
+      </aside>
+
+      <main id="score-panel" class="score-panel">
+        <div id="top-display" class="top-display">&nbsp;</div>
+        <div class="bottom-row">
+          <div class="left-col">
+            <div id="rates" class="rates"></div>
+            <div id="score" class="score"></div>
+            <div id="match-title" class="match-title"></div>
+          </div>
+          <div class="right-col">
+            <div id="required" class="required"></div>
+            <div id="batsmen" class="batsmen"></div>
+            <div id="bowler" class="bowler"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/overlay.js"></script>
+  </body>
+</html>

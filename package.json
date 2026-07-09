@@ -1,0 +1,18 @@
+{
+  "name": "cricradio-obs-bridge",
+  "version": "1.0.0",
+  "description": "Local bridge: CricRadio REST + WebSocket -> OBS Browser Source overlay",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pako": "^2.1.0",
+    "socket.io-client": "^4.8.1"
+  }
+}

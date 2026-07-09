@@ -1,0 +1,275 @@
+:root {
+  --overlay-width: 1280px;
+  --overlay-height: 720px;
+  --sidebar-width: 340px;
+  --app-gap: 10px;
+  --score-width: 930px;
+  --score-pad-x: 20px;
+  --score-pad-bottom: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: var(--overlay-width);
+  height: var(--overlay-height);
+  min-width: var(--overlay-width);
+  min-height: var(--overlay-height);
+  max-width: var(--overlay-width);
+  max-height: var(--overlay-height);
+  overflow: hidden;
+  background: transparent;
+  font-family: "Segoe UI", Arial, sans-serif;
+  text-transform: capitalize;
+}
+
+.app {
+  width: var(--overlay-width);
+  height: var(--overlay-height);
+  display: flex;
+  gap: var(--app-gap);
+  align-items: stretch;
+  padding: 0;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  height: var(--overlay-height);
+  padding: 14px;
+  background: #111827;
+  color: #f8fafc;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.list-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-height: 0;
+}
+
+.list-section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #60a5fa;
+  letter-spacing: 0.3px;
+}
+
+.match-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  padding-right: 4px;
+}
+
+.match-item {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 10px;
+  padding: 11px 12px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.match-item:hover {
+  border-color: #60a5fa;
+}
+
+.match-item.active {
+  border-color: #22c55e;
+  background: #14532d;
+}
+
+.match-item .title {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.match-item .meta {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.match-item.live .title::before {
+  content: "● ";
+  color: #22c55e;
+}
+
+.empty-list {
+  font-size: 15px;
+  color: #64748b;
+  padding: 8px 6px;
+}
+
+.score-panel {
+  width: var(--score-width);
+  height: var(--overlay-height);
+  flex: 0 0 var(--score-width);
+  padding: 8px 0 0;
+  background: #f9fafb;
+  color: #000000;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  user-select: none;
+}
+
+.top-display {
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
+  padding-top: 12px;
+  min-height: 72px;
+  color: #000000;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.top-display.wicket {
+  color: #dc2626;
+}
+
+.top-display.four,
+.top-display.six {
+  color: #15803d;
+}
+
+.top-display.wide,
+.top-display.no-ball {
+  color: #b45309;
+}
+
+.bottom-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 64px;
+  margin-top: auto;
+  padding: 0 0 var(--score-pad-bottom) var(--score-pad-x);
+  position: relative;
+}
+
+.left-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.right-col {
+  flex: 0 0 auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.rates,
+.score,
+.required,
+.batsmen,
+.bowler,
+.match-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #000000;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+  line-height: 1.2;
+}
+
+.rates,
+.required {
+  margin-bottom: 2px;
+  color: #1d4ed8;
+}
+
+.striker-light {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.9);
+  vertical-align: middle;
+}
+
+.score {
+  margin-bottom: 2px;
+}
+
+.match-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #4b5563;
+  margin-top: 4px;
+}
+
+.batsmen {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 2px;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.batsman-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bowler {
+  width: fit-content;
+}
+
+body.obs-mode {
+  --score-width: var(--overlay-width);
+}
+
+body.obs-mode .sidebar {
+  display: none;
+}
+
+body.obs-mode .app {
+  gap: 0;
+}
+
+body.obs-mode .score-panel {
+  width: var(--overlay-width);
+  flex: 0 0 var(--overlay-width);
+  padding-left: var(--score-pad-x);
+}
+
+.hidden-line {
+  display: none;
+}
