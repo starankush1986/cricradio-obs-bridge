@@ -253,6 +253,19 @@ body {
   gap: 6px;
 }
 
+.striker-light-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+}
+
+.batsman-text {
+  display: inline-block;
+}
+
 .bowler {
   width: fit-content;
 }

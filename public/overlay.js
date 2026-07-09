@@ -88,7 +88,7 @@ function formatBatsmenSingleLine(names, strikerName) {
       const isStriker =
         strikerName && cleanText(name) === cleanText(strikerName);
       const light = isStriker ? '<span class="striker-light"></span>' : "";
-      return `<span class="batsman-name">${light}${escapeHtml(name)}</span>`;
+      return `<span class="batsman-name"><span class="striker-light-slot">${light}</span><span class="batsman-text">${escapeHtml(name)}</span></span>`;
     })
     .join("");
 }
