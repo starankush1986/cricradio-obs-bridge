@@ -210,10 +210,8 @@ body {
 }
 
 .required {
-  font-size: 28px;
-  line-height: 1.15;
-  color: #b45309;
-  margin-top: 4px;
+  width: fit-content;
+  text-align: right;
 }
 
 .striker-light {
