@@ -11,9 +11,8 @@ Overlay: **http://localhost:3456/overlay.html** — OBS size: **1280 × 720**
 
 ## DigitalOcean (deployed)
 
-- **Overlay:** http://134.209.106.254/overlay.html
-- **OBS mode (no sidebar):** http://134.209.106.254/overlay.html?obs=1
-- **Health:** http://134.209.106.254/api/health
+- **Overlay (stable IP):** http://188.166.196.40/overlay.html?obs=1
+- **Health:** http://188.166.196.40/api/health
 - **Region:** Singapore (`sgp1`)
 - **GitHub:** https://github.com/starankush1986/cricradio-obs-bridge
 
