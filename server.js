@@ -17,6 +17,11 @@ const WATCH_MATCH_IDS = Array.from(
 
 const app = express();
 app.use(express.json());
+
+app.get("/", (_req, res) => {
+  res.redirect("/overlay.html?obs=1");
+});
+
 app.use(express.static(path.join(__dirname, "public")));
 
 const manager = new MatchManager();
