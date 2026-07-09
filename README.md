@@ -9,7 +9,21 @@ npm start
 
 Overlay: **http://localhost:3456/overlay.html** — OBS size: **1280 × 720**
 
-OBS Browser Source (sidebar hide, score only): **http://localhost:3456/overlay.html?obs=1** — size: **1280 × 720**
+## DigitalOcean (deployed)
+
+- **Overlay:** http://174.138.30.29/overlay.html
+- **OBS mode (no sidebar):** http://174.138.30.29/overlay.html?obs=1
+- **Health:** http://174.138.30.29/api/health
+- **Region:** Singapore (`sgp1`)
+- **GitHub:** https://github.com/starankush1986/cricradio-obs-bridge
+
+OBS Browser Source size: **1280 × 720**
+
+Redeploy after code changes:
+```bash
+git push origin main
+ssh root@174.138.30.29 "cd /var/www/cricradio-obs-bridge && git pull && npm ci --omit=dev && pm2 restart cricradio-obs-bridge"
+```
 
 ## How it works
 
