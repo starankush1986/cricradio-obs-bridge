@@ -301,10 +301,9 @@ function renderBoard(board) {
   matchTitleEl.textContent = "";
   matchTitleEl.classList.add("hidden-line");
 
-  const requiredText = state.required || "";
-  const hasRequired = shouldShowRequiredText(requiredText);
-  requiredEl.textContent = hasRequired ? requiredText : "";
-  requiredEl.classList.toggle("hidden-line", !hasRequired);
+  const requiredText = cleanText(state.required || "");
+  requiredEl.textContent = requiredText;
+  requiredEl.classList.toggle("hidden-line", !requiredText);
 
   const batsmanNames =
     (state.batsmanNames || []).filter(Boolean).length > 0
